@@ -9,5 +9,5 @@ Find duplicate movie files in your [Plex Media Server](http://www.plexapp.com/).
 $ bundle install
 
 # Scan
-$ ./duplicates.rb hostname:port
+$ ./duplicates.rb hostname[:port]
 ```
