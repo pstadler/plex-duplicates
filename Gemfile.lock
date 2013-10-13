@@ -1,0 +1,16 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    colored (1.2)
+    mini_portile (0.5.1)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
+    plex-ruby (1.5.0)
+      nokogiri
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  colored
+  plex-ruby
