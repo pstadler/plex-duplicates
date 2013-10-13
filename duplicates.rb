@@ -36,7 +36,6 @@ server.library.sections.each do |section|
     section.all.each do |s|
       s.seasons.each do |m|
         m.episodes.each do |e|
-          #puts "#{e.grandparent_title} - #{e.title}"
           videos << e
         end
       end
