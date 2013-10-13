@@ -1,6 +1,6 @@
 # Plex Duplicates
 
-Find duplicate movie files on your [Plex Media Server](http://www.plexapp.com/).
+Scan your [Plex Media Server](http://www.plexapp.com/) for duplicate files.
 
 ## Usage
 
