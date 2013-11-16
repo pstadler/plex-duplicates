@@ -27,6 +27,15 @@ module Plex
   end
 end
 
+def pretty_filesize n
+  count = 0
+  while  n >= 1024 and count < 4
+    n /= 1024.0
+    count += 1
+  end
+  format("%.2f",n) + %w(B KB MB GB TB)[count]
+end
+
 puts "Connecting to #{host}:#{port}"
 server = Plex::Server.new(host, port)
 
@@ -59,10 +68,11 @@ server.library.sections.each do |section|
         m.parts.each do |part|
           dir = File.dirname(part.file)
           name = File.basename(part.file)
+          size = pretty_filesize(part.size.to_i)
           unless last_dir.nil? or last_dir == dir
-            out << "  #{dir.red}/#{name}\n"
+            out << "  #{dir.red}/#{name} (#{size})\n"
           else
-            out << "  #{part.file}\n"
+            out << "  #{part.file} (#{size})\n"
           end
           last_dir = dir
         end
