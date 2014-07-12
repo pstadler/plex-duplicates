@@ -20,7 +20,8 @@ puts "Connecting to #{host}:#{port}"
 server = Plex::Server.new(host, port)
 
 server.library.sections.each do |section|
-  if section.type == 'show'
+  case section.type
+  when 'show' then
     videos = []
     section.all.each do |s|
       s.seasons.each do |m|
@@ -29,8 +30,10 @@ server.library.sections.each do |section|
         end
       end
     end
-  else
+  when 'movie' then
     videos = section.all
+  else
+    next
   end
 
   print "Analyzing #{section.title.white}: 0/#{videos.length}"
